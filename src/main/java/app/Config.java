@@ -13,7 +13,6 @@ import usecase.LogGradeUseCase;
 /**
  * Config class to provide use cases with the necessary dependencies.
  */
-
 public class Config {
     private final GradeDataBase gradeDataBase = new MongoGradeDataBase();
 
@@ -65,5 +64,12 @@ public class Config {
         return new GetAverageGradeUseCase(gradeDataBase);
     }
 
-    // TODO Task 4: add code for the new GetTopGradeUseCase following the same pattern as the other use cases above.
+    /**
+     * Get the GetTopGradeUseCase object.
+     * @return GetTopGradeUseCase object.
+     */
+    public GetTopGradeUseCase getTopGradeUseCase() {
+        return new GetTopGradeUseCase(gradeDataBase);
+    }
+
 }
